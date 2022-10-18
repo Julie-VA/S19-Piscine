@@ -6,12 +6,11 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 11:54:19 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/02/18 15:28:25 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/02/23 12:23:43 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putstr(char *str)
 {

@@ -6,13 +6,13 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 10:06:47 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/02/24 16:17:37 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:18:41 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	int		itr;
 
@@ -27,7 +27,7 @@ char	*placestr(char *str, char *sep, char **strs, int size)
 	int i;
 	int j;
 	int h;
-	
+
 	i = 0;
 	h = 0;
 	while (i < size)
@@ -46,9 +46,9 @@ char	*placestr(char *str, char *sep, char **strs, int size)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int i;
-	int j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	i = 0;
 	j = 0;

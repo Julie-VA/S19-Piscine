@@ -6,7 +6,7 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 08:19:42 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/02/18 09:28:10 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/02/23 16:06:13 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ double	ft_sqrt(int nb)
 		x = (x + (nb / x)) / 2;
 		itr++;
 	}
-	if (doublemod(x, 1) != 0)
-	{
-		return (0);
-	}
-	else
-		return (x);
+	return (x);
 }
 
 int		ft_is_prime(int nb)

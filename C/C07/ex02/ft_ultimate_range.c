@@ -6,7 +6,7 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 10:06:47 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/02/22 11:25:31 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/02/25 09:38:21 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,23 @@ int		ft_ultimate_range(int **range, int min, int max)
 {
 	int i;
 	int j;
+	int *array;
 
-	if (max - min <= 0)
+	if (min >= max)
 	{
 		*range = NULL;
 		return (0);
 	}
 	i = min;
 	j = 0;
-	*range = malloc(sizeof(**range) * (max - min));
+	array = malloc(sizeof(*array) * (max - min));
 	while (i < max)
 	{
-		range[0][j] = i;
+		array[j] = i;
 		i++;
 		j++;
 	}
+	*range = array;
 	return (max - min);
+	return (-1);
 }

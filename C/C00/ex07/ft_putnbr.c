@@ -5,40 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 14:48:35 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/02/18 14:48:38 by rvan-aud         ###   ########.fr       */
+/*   Created: 2021/02/08 13:36:47 by rvan-aud          #+#    #+#             */
+/*   Updated: 2021/02/10 12:44:02 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	write_neg(long int quotient)
 {
-	write(1, &c, 1);
+	char towrite_neg;
+
+	towrite_neg = (quotient * -1) % 10 + '0';
+	write(1, &towrite_neg, 1);
+}
+
+void	write_pos(long int quotient)
+{
+	char towrite_pos;
+
+	towrite_pos = quotient % 10 + '0';
+	write(1, &towrite_pos, 1);
 }
 
 void	ft_putnbr(int nb)
 {
-	if (nb == -2147483648)
+	long int	div;
+	long int	quotient;
+	int			neg;
+
+	neg = 0;
+	div = 10000000000;
+	while (div > 0)
 	{
-		write(1, "-2147483648", 11);
-	}
-	else
-	{
-		if (nb < 0)
+		quotient = nb / div;
+		if (quotient < 0)
 		{
-			ft_putchar('-');
-			nb = nb * (-1);
-			ft_putnbr(nb);
+			if (neg == 0)
+			{
+				write(1, "-", 1);
+				neg = 1;
+			}
+			write_neg(quotient);
 		}
-		else if (nb <= 9)
+		if (quotient > 0)
 		{
-			ft_putchar(nb + '0');
+			write_pos(quotient);
 		}
-		else
-		{
-			ft_putnbr(nb / 10);
-			ft_putchar((nb % 10) + '0');
-		}
+		div /= 10;
 	}
 }
